@@ -1,0 +1,11 @@
+{
+  "codeowners": ["@luuklomi"],
+  "config_flow": false,
+  "dependencies": [],
+  "documentation": "https://github.com/LuukLomi/smart_thermostat_control",
+  "domain": "smart_thermostat",
+  "iot_class": "cloud_polling",
+  "name": "Smart Thermostat",
+  "requirements": [],
+  "version": "1.0.0"
+}

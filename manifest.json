@@ -1,0 +1,7 @@
+{
+    "domain": "integration_domain",
+    "name": "Integration name",
+    "documentation": "https://documentation.link",
+    "dependencies": [],
+    "version": "1.0.0"
+}
