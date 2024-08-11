@@ -1,0 +1,41 @@
+The idea of is to have a system that is able to control different HVAC actuators based on different sensor data in the house. 
+For that we will have a generic model of the house thermodynamics that will be paremetrized using system identification techniques. 
+The model will then be used to in the control scheme to obtain a presize home climate control. 
+
+There will be different modes of operation that can be changed by the user:
+1. Eco mode (default): 
+2. Saving mode: It will consider the energy consumption costs in the control strategy. It requires the definition of static price-time zones or connection to an API from which this data can be obtained. This mode will allow for smaller 
+3. Normal temperature control: Maintains the temperature close to the setpoint. Similar to a conventional thermostat. 
+4. Precise temperature control: It will try to maintain the setpoints at the set temperature as much as possible. It differs from the normal mode in that this mode can use both the heating and cooling element will in normal mode it will use one or the other depending on the outside temperature. It is meant for rooms where the climate needs to be precisly controlled, e.g. a cellar. 
+
+On top of that, there will be different 
+1. Manual: You will be in total control of the setpoints. 
+2. Timed: The user can set different setpoints at different times of the day. The user will be able to manually change it, but the system will overwrite the next time it is programed to change the setpoint.
+3. Smart: Initially it will work like the manual mode, however, with time it will learn the user's patterns and adapt to them. If the user changes a setpoint, there will be a cool-off period in which the controller will not overwrite the user's input. 
+
+There will also be a auto turn-off  option (it can be disabled). This option will turn off all the HVAC inputs if ceirtain conditions are met: 
+1. Open window/door. If the model detects that there is a sudden increase in the heat flow parameter of the house it will assume there is an open window or door and it will disable the HVAC. 
+2. Fire detection. If there is a fire detected (from a connected fire detector) the HVAC is turned on. It will require a manual restart from the user. 
+
+The idea is that the program runs as a script in home assistant. The user will have to deffine the different inputs and outputs from the available sensor. The program will then build a model from there and parametrize it using online gathered data. We will probably need to make a simple controller to gather the data to patametrize the model. 
+
+Types of sensors: 
+* temperature
+    - 
+
+* Humidity
+* UV radiation
+* 
+
+Types of actuators: 
+* Heating elements: 
+    - Heater instant
+    - Heater resorvoir 
+    - Solar Heater
+    - Electric Heater
+    - Main heater with on/off radiators
+
+* Cooling helements
+
+* Air circulation
+    - ventilator
